@@ -83,8 +83,7 @@ foreach ($tarantinoMovies as $movie) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>nolan and tarantino's films</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 
 <body>
@@ -98,9 +97,23 @@ foreach ($tarantinoMovies as $movie) {
                     <p class="card-text"><?php echo $movie->director; ?></p>
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">An item</li>
-                    <li class="list-group-item">A second item</li>
-                    <li class="list-group-item">A third item</li>
+                    <li class="list-group-item">
+                        <p>
+                            Release date: <?php echo $movie->releaseYear ?>
+                        </p>
+                    </li>
+                    <li class="list-group-item">
+                        <p>
+                            Genre: <?php echo $movie->genre ?>
+                        </p>
+                    </li>
+                    <li class="list-group-item">
+                        <p>
+                            Rating: <?php echo $movie->rating ?>
+                        </p>
+                    </li>
+                    <li class="list-group-item"><?php echo $movie->genre ?></li>
+                    <li class="list-group-item"><?php echo $movie->rating ?></li>
                 </ul>
                 <div class="card-body">
                     <a href="#" class="card-link">Card link</a>
