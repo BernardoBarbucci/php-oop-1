@@ -92,11 +92,10 @@ foreach ($tarantinoMovies as $movie) {
     <main>
         <section class="container-fluid">
             <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="movie img">
+                <!-- <img src="..." class="card-img-top" alt="movie img"> -->
                 <div class="card-body">
-                    <h5 class="card-title"><?php echo $movie->title; ?></h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
+                    <h5 class="card-title text-center mb-4"><?php echo $movie->title; ?></h5>
+                    <p class="card-text"><?php echo $movie->director; ?></p>
                 </div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">An item</li>
