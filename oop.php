@@ -45,3 +45,19 @@ $tarantinoMovies = [
     new Movie("Django Unchained", "Quentin Tarantino", 2012, "Drama", 165, 8.4, ["Jamie Foxx", "Christoph Waltz"], "A freed slave sets out to rescue his wife", "English", "$100 million"),
     new Movie("Once Upon a Time in Hollywood", "Quentin Tarantino", 2019, "Comedy", 161, 7.6, ["Leonardo DiCaprio", "Brad Pitt"], "A fading actor and his stunt double navigate the changing industry", "English", "$90 million"),
 ];
+
+
+// Funzione per visualizzare le informazioni di un film
+function displayMovieInfo($movie)
+{
+    echo "Title: {$movie->title}\n";
+    echo "Director: {$movie->director}\n";
+    echo "Release Year: {$movie->releaseYear}\n";
+    echo "Genre: {$movie->genre}\n";
+    echo "Duration: {$movie->duration} minutes\n";
+    echo "Rating: {$movie->rating}\n";
+    echo "Actors: " . implode(", ", $movie->actors) . "\n";
+    echo "Plot: {$movie->plot}\n";
+    echo "Language: {$movie->language}\n";
+    echo "Budget: {$movie->budget}\n\n";
+}
