@@ -96,11 +96,11 @@ function displayMovieInfo($movie)
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 
-<body>
+<body class="bg-dark">
 
     <main class="container fluid d-flex flex-wrap">
         <?php foreach ($nolanMovies as $movie) : ?>
-            <div class="card m-2" style="width: 18rem;">
+            <div class="card m-2 bg-primary-subtle" style="width: 18rem;">
                 <!-- <img src="..." class="card-img-top" alt="movie img"> -->
                 <div class="card-body">
                     <h5 class="card-title text-center mb-4"><?php echo $movie->title; ?></h5>
@@ -129,7 +129,8 @@ function displayMovieInfo($movie)
         <?php endforeach; ?>
 
         <?php foreach ($tarantinoMovies as $movie) : ?>
-            <div class="card  m-2" style="width: 18rem;">
+            <div class="card m-2 bg-info-subtle
+" style="width: 18rem;">
                 <!-- <img src="..." class="card-img-top" alt="movie img"> -->
                 <div class="card-body">
                     <h5 class="card-title text-center mb-4"><?php echo $movie->title; ?></h5>
