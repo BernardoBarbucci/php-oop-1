@@ -62,17 +62,17 @@ function displayMovieInfo($movie)
     echo "Budget: {$movie->budget}\n\n";
 }
 
-// info Nolan 
-echo "Christopher Nolan Movies:\n";
-foreach ($nolanMovies as $movie) {
-    displayMovieInfo($movie);
-}
+// // info Nolan 
+// echo "Christopher Nolan Movies:\n";
+// foreach ($nolanMovies as $movie) {
+//     displayMovieInfo($movie);
+// }
 
-// info Tarantino
-echo "Quentin Tarantino Movies:\n";
-foreach ($tarantinoMovies as $movie) {
-    displayMovieInfo($movie);
-}
+// // info Tarantino
+// echo "Quentin Tarantino Movies:\n";
+// foreach ($tarantinoMovies as $movie) {
+//     displayMovieInfo($movie);
+// }
 
 ?>
 
@@ -89,7 +89,7 @@ foreach ($tarantinoMovies as $movie) {
 <body>
 
     <main>
-        <section class="container-fluid">
+        <?php foreach ($nolanMovies as $movie) : ?>
             <div class="card" style="width: 18rem;">
                 <!-- <img src="..." class="card-img-top" alt="movie img"> -->
                 <div class="card-body">
@@ -115,12 +115,37 @@ foreach ($tarantinoMovies as $movie) {
                     <li class="list-group-item"><?php echo $movie->genre ?></li>
                     <li class="list-group-item"><?php echo $movie->rating ?></li>
                 </ul>
-                <div class="card-body">
-                    <a href="#" class="card-link">Card link</a>
-                    <a href="#" class="card-link">Another link</a>
-                </div>
             </div>
-        </section>
+        <?php endforeach; ?>
+
+        <?php foreach ($tarantinoMovies as $movie) : ?>
+            <div class="card" style="width: 18rem;">
+                <!-- <img src="..." class="card-img-top" alt="movie img"> -->
+                <div class="card-body">
+                    <h5 class="card-title text-center mb-4"><?php echo $movie->title; ?></h5>
+                    <p class="card-text"><?php echo $movie->director; ?></p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <p>
+                            Release date: <?php echo $movie->releaseYear ?>
+                        </p>
+                    </li>
+                    <li class="list-group-item">
+                        <p>
+                            Genre: <?php echo $movie->genre ?>
+                        </p>
+                    </li>
+                    <li class="list-group-item">
+                        <p>
+                            Rating: <?php echo $movie->rating ?>
+                        </p>
+                    </li>
+                    <li class="list-group-item"><?php echo $movie->genre ?></li>
+                    <li class="list-group-item"><?php echo $movie->rating ?></li>
+                </ul>
+            </div>
+        <?php endforeach; ?>
     </main>
 
 </body>
