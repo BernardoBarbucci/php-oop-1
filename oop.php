@@ -47,7 +47,7 @@ $tarantinoMovies = [
 ];
 
 
-// Funzione per visualizzare le informazioni di un film
+// Funzione per visualizzare le informazioni del film
 function displayMovieInfo($movie)
 {
     echo "Title: {$movie->title}\n";
@@ -60,4 +60,16 @@ function displayMovieInfo($movie)
     echo "Plot: {$movie->plot}\n";
     echo "Language: {$movie->language}\n";
     echo "Budget: {$movie->budget}\n\n";
+}
+
+// info Nolan 
+echo "Christopher Nolan Movies:\n";
+foreach ($nolanMovies as $movie) {
+    displayMovieInfo($movie);
+}
+
+// info Tarantino
+echo "Quentin Tarantino Movies:\n";
+foreach ($tarantinoMovies as $movie) {
+    displayMovieInfo($movie);
 }
