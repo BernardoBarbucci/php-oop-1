@@ -72,17 +72,6 @@ function displayMovieInfo($movie)
     echo "Budget: {$movie->budget}\n\n";
 }
 
-// // info Nolan 
-// echo "Christopher Nolan Movies:\n";
-// foreach ($nolanMovies as $movie) {
-//     displayMovieInfo($movie);
-// }
-
-// // info Tarantino
-// echo "Quentin Tarantino Movies:\n";
-// foreach ($tarantinoMovies as $movie) {
-//     displayMovieInfo($movie);
-// }
 
 ?>
 
@@ -122,8 +111,27 @@ function displayMovieInfo($movie)
                             Rating: <?php echo $movie->rating ?>
                         </p>
                     </li>
-                    <li class="list-group-item"><?php echo $movie->genre ?></li>
-                    <li class="list-group-item"><?php echo $movie->rating ?></li>
+                    <li class="list-group-item">
+                        <p>
+                            Rating: <?php echo $movie->genre ?>
+                        </p>
+                    </li>
+                    <li class="list-group-item">
+                        <p>
+                            Actors:
+                            <?php echo implode(", ", $movie->actors); ?>
+                        </p>
+                    </li>
+                    <li class="list-group-item">
+                        <p>
+                            Rating: <?php echo $movie->genre ?>
+                        </p>
+                    </li>
+                    <li class="list-group-item">
+                        <p>
+                            Rating: <?php echo $movie->genre ?>
+                        </p>
+                    </li>
                 </ul>
             </div>
         <?php endforeach; ?>
