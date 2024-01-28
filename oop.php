@@ -97,6 +97,10 @@ if (isset($_GET['rating'])) {
     $selectedRatingRange = $_GET['rating'];
     $filteredNolanMovies = filterRating($nolanMovies, $selectedRatingRange);
     $filteredTarantinoMovies = filterRating($tarantinoMovies, $selectedRatingRange);
+} else {
+    // stampa tutto se non è selezionato nessun film
+    $filteredNolanMovies = $nolanMovies;
+    $filteredTarantinoMovies = $tarantinoMovies;
 }
 
 ?>
