@@ -86,11 +86,15 @@ function displayMovieInfo($movie)
 </head>
 
 <body class="bg-dark">
-
+    <header>
+        <div class="text-center text-white m-4 pt-4">
+            <h1>
+                Movies from Nolan and Tarantino
+            </h1>
+        </div>
+    </header>
     <main class="container fluid d-flex flex-wrap">
-        <h1>
-            Movie
-        </h1>
+
         <?php foreach ($nolanMovies as $movie) : ?>
             <div class="card m-2 bg-primary-subtle" style="width: 18rem;">
                 <!-- <img src="..." class="card-img-top" alt="movie img"> -->
