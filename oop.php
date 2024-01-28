@@ -72,6 +72,11 @@ function displayMovieInfo($movie)
     echo "Budget: {$movie->budget}\n\n";
 }
 
+// metodo per filtrare i film in base al rating
+
+function filterRating($movies, $ratingRange)
+{
+}
 
 ?>
 
@@ -92,6 +97,12 @@ function displayMovieInfo($movie)
                 Movies from Nolan and Tarantino
             </h1>
         </div>
+        <select class="form-select ms-2 mb-4" aria-label="Default select example" style="width: 15rem">
+            <option selected>Open this select menu</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+        </select>
     </header>
     <main class="container fluid d-flex flex-wrap">
 
