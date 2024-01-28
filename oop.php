@@ -85,8 +85,17 @@ function filterRating($movies, $ratingRange)
         list($min, $max) = explode('-', $ratingRange);
 
         // confronto se rientra nel rating 
-        if ($rating >= )
+        if ($rating >= $min && $rating <= $max) {
+            $filteredMovies[] = $movie;
+        }
     }
+
+    return $filteredMovies;
+}
+
+if (isset($_GET['rating'])) {
+    $selectedRatingRange = $_GET['rating'];
+    $filteredNolanMovies = filterMoviesByRating()
 }
 
 ?>
