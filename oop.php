@@ -112,7 +112,8 @@ if (isset($_GET['rating'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nolan and Tarantino's films</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 
 <body class="bg-dark">
@@ -122,7 +123,8 @@ if (isset($_GET['rating'])) {
                 Movies from Nolan and Tarantino
             </h1>
         </div>
-        <select class="form-select ms-2 mb-4" aria-label="Default select example" style="width: 15rem">
+        <select class="form-select ms-2 mb-4" aria-label="Default select example" style="width: 15rem"
+            onchange="filterMovies()">
             <option selected>Filter by rating</option>
             <option value="1-2">1-2</option>
             <option value="3-4">3-4</option>
@@ -134,116 +136,131 @@ if (isset($_GET['rating'])) {
     <main class="container fluid d-flex flex-wrap">
 
         <?php foreach ($nolanMovies as $movie) : ?>
-            <div class="card m-2 bg-primary-subtle" style="width: 18rem;">
-                <!-- <img src="..." class="card-img-top" alt="movie img"> -->
-                <div class="card-body">
-                    <h5 class="card-title text-center mb-4"><?php echo $movie->title; ?></h5>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">
-                        <p>
-                            Director: <?php echo $movie->director; ?>
-                        </p>
-                    </li>
-                    <li class="list-group-item">
-                        <p>
-                            Release date: <?php echo $movie->releaseYear ?>
-                        </p>
-                    </li>
-                    <li class="list-group-item">
-                        <p>
-                            Genre: <?php echo $movie->genre ?>
-                        </p>
-                    </li>
-                    <li class="list-group-item">
-                        <p>
-                            Rating: <?php echo $movie->rating ?>
-                        </p>
-                    </li>
-                    <li class="list-group-item">
-                        <p>
-                            Rating: <?php echo $movie->genre ?>
-                        </p>
-                    </li>
-                    <li class="list-group-item">
-                        <p>
-                            Actors:
-                            <?php echo implode(", ", $movie->actors); ?>
-                        </p>
-                    </li>
-                    <li class="list-group-item">
-                        <p>
-                            Short trama: <?php echo $movie->plot ?>
-                        </p>
-                    </li>
-                    <li class="list-group-item">
-                        <p>
-                            Language: <?php echo $movie->language ?>
-                        </p>
-                    </li>
-                    <li class="list-group-item">
-                        <p>
-                            Budget to shoot the film: <?php echo $movie->budget ?>
-                        </p>
-                    </li>
-                </ul>
+        <div class="card m-2 bg-primary-subtle" style="width: 18rem;">
+            <!-- <img src="..." class="card-img-top" alt="movie img"> -->
+            <div class="card-body">
+                <h5 class="card-title text-center mb-4"><?php echo $movie->title; ?></h5>
             </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <p>
+                        Director: <?php echo $movie->director; ?>
+                    </p>
+                </li>
+                <li class="list-group-item">
+                    <p>
+                        Release date: <?php echo $movie->releaseYear ?>
+                    </p>
+                </li>
+                <li class="list-group-item">
+                    <p>
+                        Genre: <?php echo $movie->genre ?>
+                    </p>
+                </li>
+                <li class="list-group-item">
+                    <p>
+                        Rating: <?php echo $movie->rating ?>
+                    </p>
+                </li>
+                <li class="list-group-item">
+                    <p>
+                        Rating: <?php echo $movie->genre ?>
+                    </p>
+                </li>
+                <li class="list-group-item">
+                    <p>
+                        Actors:
+                        <?php echo implode(", ", $movie->actors); ?>
+                    </p>
+                </li>
+                <li class="list-group-item">
+                    <p>
+                        Short trama: <?php echo $movie->plot ?>
+                    </p>
+                </li>
+                <li class="list-group-item">
+                    <p>
+                        Language: <?php echo $movie->language ?>
+                    </p>
+                </li>
+                <li class="list-group-item">
+                    <p>
+                        Budget to shoot the film: <?php echo $movie->budget ?>
+                    </p>
+                </li>
+            </ul>
+        </div>
         <?php endforeach; ?>
 
         <?php foreach ($tarantinoMovies as $movie) : ?>
-            <div class="card m-2 bg-info-subtle
+        <div class="card m-2 bg-info-subtle
 " style="width: 18rem;">
-                <!-- <img src="..." class="card-img-top" alt="movie img"> -->
-                <div class="card-body">
-                    <h5 class="card-title text-center mb-4"><?php echo $movie->title; ?></h5>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">
-                        <p>
-                            Director: <?php echo $movie->director; ?>
-                        </p>
-                    </li>
-                    <li class="list-group-item">
-                        <p>
-                            Genre: <?php echo $movie->genre ?>
-                        </p>
-                    </li>
-                    <li class="list-group-item">
-                        <p>
-                            Rating: <?php echo $movie->rating ?>
-                        </p>
-                    </li>
-                    <li class="list-group-item">
-                        <p>
-                            Rating: <?php echo $movie->genre ?>
-                        </p>
-                    </li>
-                    <li class="list-group-item">
-                        <p>
-                            Actors:
-                            <?php echo implode(", ", $movie->actors); ?>
-                        </p>
-                    </li>
-                    <li class="list-group-item">
-                        <p>
-                            Short trama: <?php echo $movie->plot ?>
-                        </p>
-                    </li>
-                    <li class="list-group-item">
-                        <p>
-                            Language: <?php echo $movie->language ?>
-                        </p>
-                    </li>
-                    <li class="list-group-item">
-                        <p>
-                            Budget to shoot the film: <?php echo $movie->budget ?>
-                        </p>
-                    </li>
-                </ul>
+            <!-- <img src="..." class="card-img-top" alt="movie img"> -->
+            <div class="card-body">
+                <h5 class="card-title text-center mb-4"><?php echo $movie->title; ?></h5>
             </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <p>
+                        Director: <?php echo $movie->director; ?>
+                    </p>
+                </li>
+                <li class="list-group-item">
+                    <p>
+                        Genre: <?php echo $movie->genre ?>
+                    </p>
+                </li>
+                <li class="list-group-item">
+                    <p>
+                        Rating: <?php echo $movie->rating ?>
+                    </p>
+                </li>
+                <li class="list-group-item">
+                    <p>
+                        Rating: <?php echo $movie->genre ?>
+                    </p>
+                </li>
+                <li class="list-group-item">
+                    <p>
+                        Actors:
+                        <?php echo implode(", ", $movie->actors); ?>
+                    </p>
+                </li>
+                <li class="list-group-item">
+                    <p>
+                        Short trama: <?php echo $movie->plot ?>
+                    </p>
+                </li>
+                <li class="list-group-item">
+                    <p>
+                        Language: <?php echo $movie->language ?>
+                    </p>
+                </li>
+                <li class="list-group-item">
+                    <p>
+                        Budget to shoot the film: <?php echo $movie->budget ?>
+                    </p>
+                </li>
+            </ul>
+        </div>
         <?php endforeach; ?>
     </main>
 
+    <!-- script per cambiare onclick i film e filtrarli quando viene selezionata una value nella select -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var select = document.querySelector('select');
+
+        select.addEventListener('change', function() {
+            var selectedRating = select.value;
+            window.location.href = "?rating=" + selectedRating;
+        });
+
+        // Impostare il valore corrente della select
+        var currentRating = "<?php echo isset($_GET['rating']) ? $_GET['rating'] : '' ?>";
+        select.value = currentRating;
+    });
+    </script>
 </body>
 
 </html>
